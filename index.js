@@ -9,7 +9,6 @@ console.log(currrentTime);
 
 app.use(
   cors({
-    // origin: "https://lucent-pudding-6526a3.netlify.app",
     origin: "*",
   })
   );
@@ -22,7 +21,7 @@ res.send("welcome");
 app.get("/file", (req, res) => {
   fs.writeFile(`./timestamps/${currrentTime}.txt`, `${currrentTime}`, (err) => {
     console.log(err);
-    console.log("Completed writing !!! 👍");
+    console.log("Completed writing !");
     console.log(currrentTime);
     res.send(`Created ${currrentTime}.txt`);
   });
