@@ -8,6 +8,10 @@ const currrentTime = Date.now();
 console.log(currrentTime);
 
 
+app.get("/",(req,res)=>{
+res.send("welcome");
+})
+
 app.get("/file", (req, res) => {
   fs.writeFile(`./timestamps/${currrentTime}.txt`, `${currrentTime}`, (err) => {
     console.log(err);
@@ -26,4 +30,4 @@ app.get("/read", async (req, res) => {
   });
 });
 
-app.listen(3004);
+app.listen(process.env.PORT || 3004);
