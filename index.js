@@ -5,7 +5,6 @@ const cors = require("cors")
 const app = express();
 
 const currrentTime = Date.now();
-
 console.log(currrentTime);
 
 app.use(
@@ -13,8 +12,9 @@ app.use(
     // origin: "https://lucent-pudding-6526a3.netlify.app",
     origin: "*",
   })
-);
-
+  );
+  
+  app.use(express.json());
 app.get("/",(req,res)=>{
 res.send("welcome");
 })
