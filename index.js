@@ -1,5 +1,6 @@
 const express = require("express");
 const fs = require("fs");
+const cors = require("cors")
 
 const app = express();
 
@@ -7,6 +8,12 @@ const currrentTime = Date.now();
 
 console.log(currrentTime);
 
+app.use(
+  cors({
+    // origin: "https://lucent-pudding-6526a3.netlify.app",
+    origin: "*",
+  })
+);
 
 app.get("/",(req,res)=>{
 res.send("welcome");
